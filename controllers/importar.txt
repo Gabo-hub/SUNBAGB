@@ -1,0 +1,3 @@
+from controllers.control_ebusqueda import ControlBusqueda
+windows = ControlBusqueda(self)
+        xresultado= windows.conTabla("SELECT idestado,descestado  FROM estados ","ID ESTADO","ESTADO VENEZOLANO")
