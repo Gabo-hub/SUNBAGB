@@ -1,9 +1,9 @@
 from assets.suplementos import Suplementos
 from controllers.alerta import MensajeCaja
 from db.main_database import *
-from PySide2.QtCore import *
-from PySide2.QtCore import Qt
-from PySide2.QtWidgets import QWidget
+from PySide6.QtCore import *
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QWidget
 from views.añadirdato import Ui_AnadirDatos
 
 
@@ -15,186 +15,225 @@ class IntroduccionDeDatos(QWidget, Ui_AnadirDatos):
         self.setupUi(self)
         self.setWindowFlag(Qt.Window)
 
-        #################################### VARIABLES ####################################
-        v_representantes = """SELECT * FROM representantes_v;"""
-        v_estados = """SELECT * FROM public.estados ORDER BY idestados ASC;"""
-        v_parentesco = """SELECT * FROM public.parentesco ORDER BY idparentesco ASC;"""
-        v_grados = """SELECT idgrado, nomgrado FROM public.grados;"""
+        self.manager = conectarse() # DatabaseManager instance
+        self.suplemento = Suplementos()
 
-        self.conectar = conectarse()
-        self.consulta_repre = consultarvista(self.conectar, v_representantes)
-        self.consulta_estados = consultaestados(self.conectar, v_estados)
-        self.consulta_grados = consultaestados(self.conectar, v_grados)
-        self.consulta_parentesco = consultaparentesco(self.conectar, v_parentesco)
+        # Cargar datos iniciales en ComboBoxes
+        self._cargar_combos()
+
+        # Etiquetas para cambio de color (modo claro/oscuro)
+        self.txt_cambiarColor = [
+            # Estudiantes
+            self.ql_Ebasededatos, self.ql_Eingresarinfo, self.ql_EcedulaText, 
+            self.ql_EnombreText, self.ql_EapellidoText, self.ql_EsexoText, 
+            self.ql_EedadText, self.ql_EfnacimientoText, self.ql_ElnacimientoText, 
+            self.ql_EestadoText, self.ql_EdireccionText, self.ql_EobservacionesText, 
+            self.ql_ErepresentanteText, self.ql_EparentescoText, self.ql_EgradoseccionText,
+            self.label_17, self.label_18, self.label_2,
+            # Representantes
+            self.ql_Rbasededatos, self.ql_Ringresarinfo, self.ql_RnombreText, 
+            self.ql_RapellidoText, self.ql_RcedulaText, self.ql_RntelefonoText, 
+            self.ql_RdireccionText, self.ql_RdirecciontrabText, self.ql_RobservacionesText, 
+            self.ql_RestadolabText, self.ql_RtotalrepreText,
+            self.label_16, self.label_15, self.label_19,
+            # Profesores
+            self.ql_Pbasededatos, self.ql_Pingresarinfo, self.ql_PnombreText, 
+            self.ql_PapellidoText, self.ql_PcedulaText, self.ql_PsexoText, 
+            self.ql_PfnacimientoText, self.ql_PanosserviText, self.ql_PcodcargoText, 
+            self.ql_PcoddepenText, self.ql_PntelefonoText, self.ql_PgradodocText,
+            self.label_13, self.label_14, self.label_20
+        ]
+        # Frames para cambio de fondo (modo claro/oscuro)
+        self.bg_cambiarColor = [
+            self.frame_10, self.frame_12, self.frame_5, self.frame_8, 
+            self.frame, self.frame_6
+        ]
         
+        # Conectar botones
         self.bttn_Eguardar.clicked.connect(self.estudiantes_save)
         self.bttn_Rguardar.clicked.connect(self.representantes_save)
         self.bttn_Pguardar.clicked.connect(self.profesores_save)
-        #################################### COMBO BOX #########################################
-        print(self.consulta_repre)
-        for x in self.consulta_repre:
-            self.comboBox.addItem("")
-            self.comboBox.setItemText(
-                x[0] - 1, QCoreApplication.translate("AnadirDatos", str(x[1]), None))
-
-        for x in self.consulta_estados:
-            self.cbox_EestadoInfo.addItem("")
-            self.cbox_EestadoInfo.setItemText(
-                x[0] - 1, QCoreApplication.translate("AnadirDatos", str(x[1]), None))
-
-        for x in self.consulta_parentesco:
-            self.cbox_EparentescoInfo.addItem("")
-            self.cbox_EparentescoInfo.setItemText(
-                x[0] - 1, QCoreApplication.translate("AnadirDatos", str(x[1]), None))
         
-        for x in self.consulta_grados:
-            self.cbox_Egradoseccion.addItem("")
-            self.cbox_Egradoseccion.setItemText(
-                x[0] - 1, QCoreApplication.translate("AnadirDatos", str(x[1]), None))
+        # Conectar botones de salida/limpiar (mejorar ergonomía)
+        self.bttn_Psalir.clicked.connect(self.close)
+        self.bttn_Esalir.clicked.connect(self.close)
+        self.bttn_Rsalir.clicked.connect(self.close)
+
+    def _cargar_combos(self):
+        """Carga los comboboxes de forma segura usando UserData para los IDs."""
+        tablas = {
+            "representantes_v": self.comboBox,
+            "public.estados": self.cbox_EestadoInfo,
+            "public.parentesco": self.cbox_EparentescoInfo,
+            "public.grados": self.cbox_Egradoseccion
+        }
+        
+        for tabla, combo in tablas.items():
+            combo.clear()
+            # Si es representantes_v (vista), los campos son id y nombre
+            query = f"SELECT * FROM {tabla}"
+            if "estados" in tabla or "parentesco" in tabla:
+                query += " ORDER BY 1 ASC"
             
-    #FUNCIONES########################## ESTUDIANTES ####################################
+            datos = self.manager.consultar(query, fetch_all=True) or []
+            for item in datos:
+                # item[0] es ID, item[1] es Nombre/Descripción
+                combo.addItem(str(item[1]), item[0])
+
+    def _convertir_fecha(self, fecha_str):
+        """Convierte DD/MM/YYYY a YYYY-MM-DD para PostgreSQL."""
+        try:
+            partes = fecha_str.split("/")
+            if len(partes) == 3:
+                return f"{partes[2]}-{partes[1]}-{partes[0]}"
+            return fecha_str # Devolver original si no tiene el formato esperado
+        except Exception:
+            return None
+
+    # =========================================================================
+    # ESTUDIANTES
+    # =========================================================================
     def estudiantes_save(self):
+        cedula = self.qlinee_EcedulaInfo.text().strip()
+        if not cedula:
+            return MensajeCaja(self, "ERROR", "La cédula es obligatoria", 1)
 
-        fech = self.qlinee_EfnacimientoInfo.text()
-        fech2 = fech.split("/")
-        fechacambio = fech2[2]+"-"+fech2[1]+"-"+fech2[0]
-        self.E_guardarinfo = ["qlinee_EcedulaInfo.text()", "qlinee_EnombreInfo.text().upper()", "qlinee_EapellidosInfo.text().upper()", "qlinee_EsexoInfo.text()", "qlinee_EedadInfo.text()",
-                              f"{fechacambio}", "qlinee_ElnacimientoInfo.text()", "cbox_EestadoInfo.currentIndex() + 1", "qlinee_EdireccionInfo.text()", "qlinee_EobservacionesInfo.text()", "comboBox.currentIndex() + 1", "cbox_EparentescoInfo.currentIndex() + 1","cbox_Egradoseccion.currentIndex() + 1"]
-        self.listaguardar = []
+        fecha_db = self._convertir_fecha(self.qlinee_EfnacimientoInfo.text())
+        
+        # Recolectar datos
+        datos = {
+            "cedula": cedula,
+            "psnombres": self.qlinee_EnombreInfo.text().upper(),
+            "psapellidos": self.qlinee_EapellidosInfo.text().upper(),
+            "sexo": self.qlinee_EsexoInfo.text(),
+            "edad": self.qlinee_EedadInfo.text(),
+            "fnacimiento": fecha_db,
+            "lnacimiento": self.qlinee_ElnacimientoInfo.text(),
+            "idestado": self.cbox_EestadoInfo.currentData(),
+            "direccion": self.qlinee_EdireccionInfo.text(),
+            "observaciones": self.qlinee_EobservacionesInfo.text(),
+            "idrepresentante": self.comboBox.currentData(),
+            "parentesco": self.cbox_EparentescoInfo.currentData(),
+            "grado": self.cbox_Egradoseccion.currentData()
+        }
 
-        if len(self.qlinee_EcedulaInfo.text()) == 0 or len(self.qlinee_ElnacimientoInfo.text()) == 0 or len(self.qlinee_EdireccionInfo.text()) == 0:
-            return MensajeCaja(self, "ERROR INFORMACION INCOMPLETA", "POR FAVOR, RELLENE LOS CAMPOS VACIOS", 1)
+        # Validar campos críticos
+        if not all([datos["psnombres"], datos["psapellidos"], datos["idrepresentante"]]):
+            return MensajeCaja(self, "ERROR", "Faltan campos obligatorios", 1)
 
-        for i in self.E_guardarinfo:
-            if i != fechacambio:
-                self.cadena = "self."+i
-                self.listaguardar.append(eval(self.cadena))
-            else:
-                self.listaguardar.append(str(fechacambio))
+        # Verificar si existe
+        existe = self.manager.consultar("SELECT idestud FROM estudiantes WHERE cedula = %s", (cedula,))
+        
+        if not existe:
+            query = """
+                INSERT INTO estudiantes (cedula, psnombres, psapellidos, sexo, edad, fnacimiento, 
+                                       lnacimiento, idestado, direccion, observaciones, 
+                                       idrepresentante, parentesco, grado)
+                VALUES (%(cedula)s, %(psnombres)s, %(psapellidos)s, %(sexo)s, %(edad)s, %(fnacimiento)s,
+                        %(lnacimiento)s, %(idestado)s, %(direccion)s, %(observaciones)s, 
+                        %(idrepresentante)s, %(parentesco)s, %(grado)s)
+            """
+            self.manager.ejecutar(query, datos)
+            MensajeCaja(self, "ÉXITO", "Estudiante guardado correctamente", 1)
+        else:
+            query = """
+                UPDATE estudiantes SET 
+                    psnombres=%(psnombres)s, psapellidos=%(psapellidos)s, sexo=%(sexo)s, 
+                    edad=%(edad)s, fnacimiento=%(fnacimiento)s, lnacimiento=%(lnacimiento)s, 
+                    idestado=%(idestado)s, direccion=%(direccion)s, observaciones=%(observaciones)s, 
+                    idrepresentante=%(idrepresentante)s, parentesco=%(parentesco)s, grado=%(grado)s
+                WHERE cedula = %(cedula)s
+            """
+            self.manager.ejecutar(query, datos)
+            MensajeCaja(self, "ÉXITO", "Estudiante actualizado correctamente", 1)
 
-        self.holacomoestas = consultaidstud(
-            self.conectar, f"""select exists(select 1 from public.estudiantes where cedula='{self.listaguardar[0]}')""")
-        try:
-            if self.holacomoestas[0][0] == False:
-                MensajeCaja(self, "INFORMACION GUARDADA",
-                            "La informacion ha sido guardada con exito", 1)
-
-                xGuardarEstudiantes = f"""INSERT INTO public.estudiantes(cedula, psnombres, psapellidos, sexo, edad, fnacimiento,lnacimiento, idestado, direccion, observaciones, idrepresentante, parentesco, grado)
-                VALUES ({self.listaguardar[0]},'{self.listaguardar[1]}', 
-                '{self.listaguardar[2]}','{self.listaguardar[3]}','{self.listaguardar[4]}','{self.listaguardar[5]}','{self.listaguardar[6]}', {self.listaguardar[7]}, 
-                '{self.listaguardar[8]}','{self.listaguardar[9]}', {self.listaguardar[10]}, {self.listaguardar[11]}, {self.listaguardar[12]});"""
-
-                self.guardando = guardardb(self.conectar, xGuardarEstudiantes)
-                self.conectar.connection.commit()
-
-            else:
-                MensajeCaja(self, "INFORMACION GUARDADA", "La informacion ha sido actualizada con exito ", 1)
-                
-                v_idstud = """SELECT idestud, cedula FROM public.estudiantes WHERE cedula='"""+self.listaguardar[0]+"'"
-                self.consulta_idstud = actualizarinfo(self.conectar, v_idstud)
-                
-                xGuardarEstudiantes = f"""UPDATE public.estudiantes SET cedula={self.listaguardar[0]}, 
-                psnombres='{self.listaguardar[1]}', psapellidos='{self.listaguardar[2]}', 
-                sexo='{self.listaguardar[3]}', edad='{self.listaguardar[4]}', 
-                fnacimiento='{self.listaguardar[5]}', lnacimiento='{self.listaguardar[6]}', 
-                idestado={self.listaguardar[7]}, direccion='{self.listaguardar[8]}', 
-                observaciones='{self.listaguardar[9]}', idrepresentante={self.listaguardar[10]}, 
-                parentesco={self.listaguardar[11]}, grado={self.listaguardar[12]} WHERE estudiantes.idestud={self.consulta_idstud[0][0]};"""
-
-                self.guardando = guardardb(self.conectar, xGuardarEstudiantes)
-                self.conectar.connection.commit()
-        except NameError:
-            print(NameError)
-    #FUNCIONES########################## REPRESENTANTES ####################################
+    # =========================================================================
+    # REPRESENTANTES
+    # =========================================================================
     def representantes_save(self):
-        self.E_guardarinfo = ['qlinee_RnombreInfo.text().upper()','qlinee_RapellidosInfo.text().upper()','qlinee_RcedulaInfo.text()','qlinee_RntelefonoInfo.text()','qlinee_Rdireccioninfo.text()','qlinee_RdirecciontrabInfo.text()','qlinee_RobservacionesInfo.text()','qlinee_estadolabInfo.text()','qlinee_RtotalrepreInfo.text()']
-        self.listaguardar = []
+        cedula = self.qlinee_RcedulaInfo.text().strip()
+        if not cedula:
+            return MensajeCaja(self, "ERROR", "La cédula es obligatoria", 1)
 
-        if len(self.qlinee_RcedulaInfo.text()) == 0 or len(self.qlinee_Rdireccioninfo.text()) == 0 or len(self.ql_RdirecciontrabText.text()) == 0:
-            return MensajeCaja(self, "ERROR INFORMACION INCOMPLETA", "POR FAVOR, RELLENE LOS CAMPOS VACIOS", 1)
+        datos = {
+            "nrepresentante": self.qlinee_RnombreInfo.text().upper(),
+            "arepresentante": self.qlinee_RapellidosInfo.text().upper(),
+            "cedularepre": cedula,
+            "ntelefonico": self.qlinee_RntelefonoInfo.text(),
+            "ndireccion": self.qlinee_Rdireccioninfo.text(),
+            "ndirecciontrabajo": self.qlinee_RdirecciontrabInfo.text(),
+            "nobservaciones": self.qlinee_RobservacionesInfo.text(),
+            "estadolaboral": self.qlinee_estadolabInfo.text(),
+            "nrepresentados": int(self.qlinee_RtotalrepreInfo.text() or 0)
+        }
 
-        for i in self.E_guardarinfo:
-                self.cadena = "self."+i
-                self.listaguardar.append(eval(self.cadena))
-
-        self.holacomoestas = consultaidstud(
-            self.conectar, f"""select exists(select 1 from public.representantes where cedularepre='{self.listaguardar[2]}')""")
+        existe = self.manager.consultar("SELECT idrepresentante FROM representantes WHERE cedularepre = %s", (cedula,))
         
-        try:
-            if self.holacomoestas[0][0] == False:
-                MensajeCaja(self, "INFORMACION GUARDADA",
-                            "La informacion ha sido guardada con exito", 1)
+        if not existe:
+            query = """
+                INSERT INTO representantes (nrepresentante, arepresentante, cedularepre, ntelefonico, 
+                                          ndireccion, ndirecciontrabajo, nobservaciones, estadolaboral, nrepresentados)
+                VALUES (%(nrepresentante)s, %(arepresentante)s, %(cedularepre)s, %(ntelefonico)s, 
+                        %(ndireccion)s, %(ndirecciontrabajo)s, %(nobservaciones)s, %(estadolaboral)s, %(nrepresentados)s)
+            """
+            self.manager.ejecutar(query, datos)
+            MensajeCaja(self, "ÉXITO", "Representante guardado correctamente", 1)
+        else:
+            query = """
+                UPDATE representantes SET 
+                    nrepresentante=%(nrepresentante)s, arepresentante=%(arepresentante)s, 
+                    ntelefonico=%(ntelefonico)s, ndireccion=%(ndireccion)s, 
+                    ndirecciontrabajo=%(ndirecciontrabajo)s, nobservaciones=%(nobservaciones)s, 
+                    estadolaboral=%(estadolaboral)s, nrepresentados=%(nrepresentados)s
+                WHERE cedularepre = %(cedularepre)s
+            """
+            self.manager.ejecutar(query, datos)
+            MensajeCaja(self, "ÉXITO", "Representante actualizado correctamente", 1)
+        
+        self._cargar_combos() # Actualizar lista de representantes para el combo de estudiantes
 
-                xGuardarEstudiantes = f"""INSERT INTO public.representantes(
-	            nrepresentante, arepresentante, cedularepre, ntelefonico, ndireccion, ndirecciontrabajo, nobservaciones, estadolaboral, nrepresentados)
-	            VALUES ('{self.listaguardar[0]}','{self.listaguardar[1]}', 
-                '{self.listaguardar[2]}','{self.listaguardar[3]}','{self.listaguardar[4]}','{self.listaguardar[5]}','{self.listaguardar[6]}', '{self.listaguardar[7]}', 
-                {int(self.listaguardar[8])});"""
-
-                self.guardando = guardardb(self.conectar, xGuardarEstudiantes)
-                self.conectar.connection.commit()
-            else:
-                MensajeCaja(self, "INFORMACION GUARDADA", "La informacion ha sido actualizada con exito ", 1)
-                
-                v_idrepre = """SELECT idrepresentante, cedularepre FROM public.representantes WHERE cedularepre='"""+self.listaguardar[2]+"'"
-                self.consulta_idrepre = actualizarinfo(self.conectar, v_idrepre)
-                
-                xGuardarEstudiantes = f"""UPDATE public.representantes
-	            SET nrepresentante='{self.listaguardar[0]}', arepresentante='{self.listaguardar[1]}',
-                cedularepre='{self.listaguardar[2]}', ntelefonico='{self.listaguardar[3]}', ndireccion='{self.listaguardar[4]}', 
-                ndirecciontrabajo='{self.listaguardar[5]}', nobservaciones='{self.listaguardar[6]}', 
-                estadolaboral='{self.listaguardar[7]}', nrepresentados={int(self.listaguardar[8])}
-	            WHERE representantes.idrepresentante={self.consulta_idrepre[0][0]};"""
-
-                self.guardando = guardardb(self.conectar, xGuardarEstudiantes)
-                self.conectar.connection.commit()
-        except NameError:
-            print(NameError)
-    #FUNCIONES########################## PROFESORES ####################################
+    # =========================================================================
+    # PROFESORES
+    # =========================================================================
     def profesores_save(self):
-        self.E_guardarinfo = ["qlinee_PnombreInfo.text().upper()","qlinee_PapellidosInfo.text().upper()","qlinee_PcedulaInfo.text()","qlinee_PsexoInfo.text()","qlinee_PfnacimientoInfo.text()","qlinee_PanosserviInfo.text()","qlinee_PcodcargoInfo.text()","qlinee_PcoddepenInfo.text()","qlinee_PntelefonoInfo.text()","qcbox_PgradodocInfo.currentText()"]
-        self.listaguardar = []
+        cedula = self.qlinee_PcedulaInfo.text().strip()
+        if not cedula:
+            return MensajeCaja(self, "ERROR", "La cédula es obligatoria", 1)
 
-        if len(self.qlinee_PcedulaInfo.text()) == 0 or len(self.qlinee_PcodcargoInfo.text()) == 0 or len(self.qlinee_PnombreInfo.text()) == 0:
-            return MensajeCaja(self, "ERROR INFORMACION INCOMPLETA", "POR FAVOR, RELLENE LOS CAMPOS VACIOS", 1)
+        datos = {
+            "pnombres": self.qlinee_PnombreInfo.text().upper(),
+            "papellidos": self.qlinee_PapellidosInfo.text().upper(),
+            "pcedula": cedula,
+            "psexo": self.qlinee_PsexoInfo.text(),
+            "fnacimiento": self.qlinee_PfnacimientoInfo.text(),
+            "pañosservi": int(self.qlinee_PanosserviInfo.text() or 0),
+            "pcodecargo": self.qlinee_PcodcargoInfo.text(),
+            "pcodedepen": self.qlinee_PcoddepenInfo.text(),
+            "ptelefono": self.qlinee_PntelefonoInfo.text(),
+            "pgrado": self.qcbox_PgradodocInfo.currentText()
+        }
 
-        for i in self.E_guardarinfo:
-                self.cadena = "self."+i
-                self.listaguardar.append(eval(self.cadena))
-
-        self.holacomoestas = consultaidstud(
-            self.conectar, f"""select exists(select 1 from public.profesores where pcedula='{self.listaguardar[2]}')""")
+        existe = self.manager.consultar("SELECT pides FROM profesores WHERE pcedula = %s", (cedula,))
         
-        try:
-            if self.holacomoestas[0][0] == False:
-                MensajeCaja(self, "INFORMACION GUARDADA",
-                            "La informacion ha sido guardada con exito", 1)
-
-                xGuardarEstudiantes = f"""INSERT INTO public.profesores(
-	            pnombres, papellidos, pcedula, psexo, fnacimiento, "pañosservi", pcodecargo, pcodedepen, ptelefono, pgrado)
-	            VALUES ('{self.listaguardar[0]}', '{self.listaguardar[1]}', {self.listaguardar[2]}, 
-                        '{self.listaguardar[3]}', '{self.listaguardar[4]}', {self.listaguardar[5]},
-                        '{self.listaguardar[6]}', '{self.listaguardar[7]}', '{self.listaguardar[8]}', '{self.listaguardar[9]}');"""
-
-                self.guardando = guardardb(self.conectar, xGuardarEstudiantes)
-                self.conectar.connection.commit()
-
-            else:
-                MensajeCaja(self, "INFORMACION GUARDADA", "La informacion ha sido actualizada con exito ", 1)
-                
-                v_idprofe = """SELECT pides, pcedula FROM public.profesores WHERE pcedula='"""+self.listaguardar[2]+"'"
-                self.consulta_idprofe = actualizarinfo(self.conectar, v_idprofe)
-                
-                xGuardarEstudiantes = f"""UPDATE public.profesores SET pnombres='{self.listaguardar[0]}', 
-                papellidos='{self.listaguardar[1]}', pcedula={self.listaguardar[2]}, psexo='{self.listaguardar[3]}', 
-                fnacimiento='{self.listaguardar[4]}', "pañosservi"={self.listaguardar[5]}, 
-                pcodecargo='{self.listaguardar[6]}', pcodedepen='{self.listaguardar[7]}', 
-                ptelefono='{self.listaguardar[8]}', pgrado='{self.listaguardar[9]}'
-	            WHERE profesores.pides={self.consulta_idprofe[0][0]};"""
-
-                self.guardando = guardardb(self.conectar, xGuardarEstudiantes)
-                self.conectar.connection.commit()
-        except NameError:
-            print(NameError)           
+        if not existe:
+            query = """
+                INSERT INTO profesores (pnombres, papellidos, pcedula, psexo, fnacimiento, 
+                                      "pañosservi", pcodecargo, pcodedepen, ptelefono, pgrado)
+                VALUES (%(pnombres)s, %(papellidos)s, %(pcedula)s, %(psexo)s, %(fnacimiento)s, 
+                        %(pañosservi)s, %(pcodecargo)s, %(pcodedepen)s, %(ptelefono)s, %(pgrado)s)
+            """
+            self.manager.ejecutar(query, datos)
+            MensajeCaja(self, "ÉXITO", "Docente guardado correctamente", 1)
+        else:
+            query = """
+                UPDATE profesores SET 
+                    pnombres=%(pnombres)s, papellidos=%(papellidos)s, psexo=%(psexo)s, 
+                    fnacimiento=%(fnacimiento)s, "pañosservi"=%(pañosservi)s, 
+                    pcodecargo=%(pcodecargo)s, pcodedepen=%(pcodedepen)s, 
+                    ptelefono=%(ptelefono)s, pgrado=%(pgrado)s
+                WHERE pcedula = %(pcedula)s
+            """
+            self.manager.ejecutar(query, datos)
+            MensajeCaja(self, "ÉXITO", "Docente actualizado correctamente", 1)
 
 

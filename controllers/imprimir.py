@@ -1,7 +1,7 @@
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtPrintSupport import *
-from PySide2.QtWidgets import QWidget
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtPrintSupport import *
+from PySide6.QtWidgets import QWidget
 from views.imprimirpage import Ui_Form
 from views.main_estudiantes import Ui_Estudiantes
 

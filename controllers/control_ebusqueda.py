@@ -1,7 +1,8 @@
 from views.ebusqueda import Ui_eBusqueda
-from PySide2.QtWidgets import QDialog,QTableWidgetItem
-from PySide2.QtGui import *
-from PySide2.QtCore import *
+from PySide6.QtGui import QRegularExpressionValidator   
+from PySide6.QtWidgets import QDialog,QTableWidgetItem
+from PySide6.QtGui import *
+from PySide6.QtCore import *
 from db.main_database import *
 
 
@@ -9,38 +10,54 @@ class ControlBusqueda(QDialog, Ui_eBusqueda):
     # Definir la señal que se dispara al finalizar la selección
     alFinal = Signal(int)
 
-    def __init__(self,parent=None):
+    def __init__(self, parent=None, mode="estudiantes"):
         # INVOCA AL CONSTRUCTOR DE LA CLASE PADRE
         super().__init__(parent)
         self.setupUi(self)
+        self.mode = mode
+
+        # Etiquetas para cambio de color (modo claro/oscuro)
+        self.txt_cambiarColor = [
+            self.lblColumna1, self.lblColumna2, self.label, self.label_3
+        ]
+        # Frames para cambio de fondo (modo claro/oscuro)
+        self.bg_cambiarColor = [
+            self.frame, self.frPieBotonSalir
+        ]
+        
         # DEFINE ALGUNOS ATRIBUTOS PARA EL NUEVO OBJETO
         self.setWindowFlag(Qt.Window)
         icon = QIcon()
         icon.addFile(u":/logo_ipasme/icons/IPASME-logo-DABC2AE9B1-seeklogo.com.png", QSize(), QIcon.Normal, QIcon.Off)
         self.setWindowIcon(icon)
         self.resultado=0
+        
         # CARGAR VALORES AL OBJETO QTABLETWIDGET DESDE LA BASE DE DATOS
                 # VALIDACION DE DATOS
-        self.Validador = QRegExpValidator(QRegExp("[1-9]\\d{0,10}"),self)
+        self.Validador = QRegularExpressionValidator(QRegularExpression("[1-9]\\d{0,10}"),self)
         self.txtNumeracion.setValidator(self.Validador)
-        self.Validador = QRegExpValidator(QRegExp("[A-Za-z áéíóú]*"),self)
+        self.Validador = QRegularExpressionValidator(QRegularExpression("[A-Za-z áéíóú]*"),self)
         self.txtCategoria.setValidator(self.Validador)
         
-        # CARGAR LOS GRADOS EN EL COMBO BOX
-        
-        v_grados = """SELECT idgrado, nomgrado FROM public.grados;"""
-        self.conectar = conectarse()
-        self.consulta_grados = consultaestados(self.conectar, v_grados)
-        
-        self.cbox_grado.addItem("")
-        self.cbox_grado.setItemText(0, QCoreApplication.translate("AnadirDatos", "VISTA GENERAL", None))
-        for x in self.consulta_grados:
+        if self.mode == "estudiantes":
+            # CARGAR LOS GRADOS EN EL COMBO BOX
+            v_grados = """SELECT idgrado, nomgrado FROM public.grados;"""
+            self.conectar = conectarse()
+            self.consulta_grados = consultaestados(self.conectar, v_grados)
+            
             self.cbox_grado.addItem("")
-            self.cbox_grado.setItemText(
-                x[0], QCoreApplication.translate("AnadirDatos", str(x[1]), None))
-        
-        # ACTIVAR EL EVENTO DE CAMBIO DE TEXTO EN EL LINEEDIT IDENTIFICADOR
-        self.cbox_grado.currentIndexChanged.connect(self.ubicar)
+            self.cbox_grado.setItemText(0, QCoreApplication.translate("AnadirDatos", "VISTA GENERAL", None))
+            for x in self.consulta_grados:
+                self.cbox_grado.addItem("")
+                self.cbox_grado.setItemText(
+                    x[0], QCoreApplication.translate("AnadirDatos", str(x[1]), None))
+            
+            # ACTIVAR EL EVENTO DE CAMBIO DE TEXTO EN EL LINEEDIT IDENTIFICADOR
+            self.cbox_grado.currentIndexChanged.connect(self.ubicar)
+        else:
+            self.cbox_grado.setVisible(False)
+            self.label.setVisible(False)
+
         self.txtNumeracion.textChanged.connect(self.filtrar)
         self.txtNumeracion.returnPressed.connect(self.tblBusqueda.setFocus)
         self.txtCategoria.textChanged.connect(self.filtrar)
@@ -50,7 +67,6 @@ class ControlBusqueda(QDialog, Ui_eBusqueda):
         self.tblBusqueda.activated.connect(self.seleccionar) 
         self.finished.connect(self.finalizar)
 
-        self.show()
         
     def ubicar(self):
         self.seleccion = self.cbox_grado.currentIndex()

@@ -9,12 +9,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
+    <width>765</width>
     <height>504</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
-   <enum>Qt::DefaultContextMenu</enum>
+   <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
   </property>
   <property name="windowTitle">
    <string/>
@@ -24,7 +24,7 @@
     <normaloff>:/Botones categoria/Webp.net-resizeimage.png</normaloff>:/Botones categoria/Webp.net-resizeimage.png</iconset>
   </property>
   <property name="layoutDirection">
-   <enum>Qt::LeftToRight</enum>
+   <enum>Qt::LayoutDirection::LeftToRight</enum>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(51, 54, 57);</string>
@@ -37,10 +37,10 @@
   </property>
   <widget class="QWidget" name="CentralWidget">
    <property name="contextMenuPolicy">
-    <enum>Qt::DefaultContextMenu</enum>
+    <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
    </property>
    <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -49,10 +49,10 @@
        <string notr="true">background-color: rgb(85, 90, 95);</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::Shape::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Shadow::Raised</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
@@ -61,7 +61,6 @@
           <font>
            <family>Poppins</family>
            <pointsize>20</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -72,7 +71,7 @@
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;REGISTRO INSTITUCIONAL&lt;br/&gt;ANTONIO GUZMAN BLANCO&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="textFormat">
-          <enum>Qt::RichText</enum>
+          <enum>Qt::TextFormat::RichText</enum>
          </property>
         </widget>
        </item>
@@ -86,7 +85,7 @@
         <item>
          <spacer name="verticalSpacer_6">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -135,7 +134,6 @@ QPushButton:pressed
            <font>
             <family>Poppins</family>
             <pointsize>14</pointsize>
-            <weight>75</weight>
             <bold>true</bold>
            </font>
           </property>
@@ -150,7 +148,7 @@ QPushButton:pressed
         <item>
          <spacer name="verticalSpacer_5">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -167,7 +165,7 @@ QPushButton:pressed
         <item>
          <spacer name="verticalSpacer_7">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -236,7 +234,6 @@ QPushButton:pressed
           <property name="font">
            <font>
             <family>Poppins</family>
-            <weight>75</weight>
             <bold>true</bold>
            </font>
           </property>
@@ -251,7 +248,7 @@ QPushButton:pressed
         <item>
          <spacer name="verticalSpacer_4">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -268,7 +265,7 @@ QPushButton:pressed
         <item>
          <spacer name="verticalSpacer_8">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -317,7 +314,6 @@ QPushButton:pressed
            <font>
             <family>Poppins</family>
             <pointsize>14</pointsize>
-            <weight>75</weight>
             <bold>true</bold>
            </font>
           </property>
@@ -332,7 +328,7 @@ QPushButton:pressed
         <item>
          <spacer name="verticalSpacer_3">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -353,14 +349,17 @@ QPushButton:pressed
 color: rgb(255, 255, 255);</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::Shape::StyledPanel</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Shadow::Raised</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QCheckBox" name="checkBox">
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -373,12 +372,24 @@ color: rgb(255, 255, 255);</string>
            <height>23</height>
           </size>
          </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+         <property name="tristate">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item>
         <spacer name="horizontalSpacer">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -410,7 +421,23 @@ QPushButton:pressed
 }</string>
          </property>
          <property name="text">
-          <string>Cerrar</string>
+          <string>  Cerrar</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../assets/icons/resource.qrc">
+           <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>24</height>
+          </size>
+         </property>
+         <property name="autoRepeat">
+          <bool>false</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>false</bool>
          </property>
          <property name="autoDefault">
           <bool>false</bool>
@@ -433,24 +460,30 @@ QPushButton:pressed
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>661</width>
-     <height>21</height>
+     <width>765</width>
+     <height>33</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Poppins</family>
      <pointsize>7</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="cursor">
     <cursorShape>PointingHandCursor</cursorShape>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LayoutDirection::LeftToRight</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(85, 90, 95);
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+padding:0px 10px;</string>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
    </property>
    <widget class="QMenu" name="menuIngresar_datos">
     <property name="title">
@@ -458,7 +491,23 @@ color: rgb(255, 255, 255);</string>
     </property>
     <addaction name="actionRegistro_de_La_Data"/>
    </widget>
+   <widget class="QMenu" name="menuHorarios">
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Horarios</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+    <addaction name="actionHorarios"/>
+   </widget>
    <addaction name="menuIngresar_datos"/>
+   <addaction name="menuHorarios"/>
   </widget>
   <action name="actionRegistro_de_La_Data">
    <property name="text">
@@ -471,12 +520,16 @@ color: rgb(255, 255, 255);</string>
     <font>
      <family>Poppins</family>
      <pointsize>7</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="shortcutContext">
-    <enum>Qt::ApplicationShortcut</enum>
+    <enum>Qt::ShortcutContext::ApplicationShortcut</enum>
+   </property>
+  </action>
+  <action name="actionHorarios">
+   <property name="text">
+    <string>Gestionar</string>
    </property>
   </action>
  </widget>

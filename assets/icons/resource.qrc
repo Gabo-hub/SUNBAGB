@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="Botones salida">
+    <file>icon-park--close-one.png</file>
     <file>clear_icon.png</file>
     <file>edit-book.png</file>
     <file>edit-icon.png</file>
@@ -12,6 +13,7 @@
     <file>select-file.icon.png</file>
   </qresource>
   <qresource prefix="Botones categoria">
+    <file>openmoji--spiral-notepad.png</file>
     <file>c635eec91f05b8a1c4f03a7b2eae770c.png</file>
     <file>f7e559c21b8e17b80fecd9ead3e0338f.png</file>
     <file>representantes.png</file>

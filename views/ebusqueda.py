@@ -1,24 +1,32 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ebusqueda.ui'
+## Form generated from reading UI file 'ebusquedabmkJTO.ui'
 ##
-## Created by: Qt User Interface Compiler version 5.15.2
+## Created by: Qt User Interface Compiler version 6.10.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
-
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QDialog,
+    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QPushButton, QSizePolicy,
+    QSpacerItem, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_eBusqueda(object):
     def setupUi(self, eBusqueda):
         if not eBusqueda.objectName():
             eBusqueda.setObjectName(u"eBusqueda")
         eBusqueda.resize(656, 536)
-        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(eBusqueda.sizePolicy().hasHeightForWidth())
@@ -31,15 +39,15 @@ class Ui_eBusqueda(object):
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.frame = QFrame(eBusqueda)
         self.frame.setObjectName(u"frame")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy1.setHorizontalStretch(0)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.frame.sizePolicy().hasHeightForWidth())
         self.frame.setSizePolicy(sizePolicy1)
         self.frame.setMaximumSize(QSize(16777215, 90))
         self.frame.setStyleSheet(u"background-color: rgb(85, 90, 95);")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.frame.setLineWidth(0)
         self.gridLayout = QGridLayout(self.frame)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -54,13 +62,12 @@ class Ui_eBusqueda(object):
         self.lblColumna1.setObjectName(u"lblColumna1")
         self.lblColumna1.setMaximumSize(QSize(200, 16777215))
         font = QFont()
-        font.setFamily(u"Poppins")
+        font.setFamilies([u"Poppins"])
         font.setPointSize(12)
         font.setBold(True)
-        font.setWeight(75)
         self.lblColumna1.setFont(font)
         self.lblColumna1.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.lblColumna1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.lblColumna1.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
 
         self.gridLayout.addWidget(self.lblColumna1, 0, 0, 1, 1)
 
@@ -68,7 +75,7 @@ class Ui_eBusqueda(object):
         self.lblColumna2.setObjectName(u"lblColumna2")
         self.lblColumna2.setFont(font)
         self.lblColumna2.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.lblColumna2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.lblColumna2.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.gridLayout.addWidget(self.lblColumna2, 1, 0, 1, 1)
 
@@ -96,9 +103,8 @@ class Ui_eBusqueda(object):
 
         self.frTabla = QFrame(eBusqueda)
         self.frTabla.setObjectName(u"frTabla")
-        self.frTabla.setStyleSheet(u"background-color: rgb(177, 214, 200);")
-        self.frTabla.setFrameShape(QFrame.StyledPanel)
-        self.frTabla.setFrameShadow(QFrame.Raised)
+        self.frTabla.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frTabla.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.frTabla)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -107,7 +113,6 @@ class Ui_eBusqueda(object):
             self.tblBusqueda.setColumnCount(2)
         font1 = QFont()
         font1.setBold(True)
-        font1.setWeight(75)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font1);
         __qtablewidgetitem.setBackground(QColor(24, 42, 127));
@@ -143,10 +148,11 @@ class Ui_eBusqueda(object):
         self.tblBusqueda.setItem(5, 1, __qtablewidgetitem13)
         self.tblBusqueda.setObjectName(u"tblBusqueda")
         self.tblBusqueda.setEnabled(True)
-        self.tblBusqueda.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tblBusqueda.setAutoScroll(True)
+        self.tblBusqueda.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
         self.tblBusqueda.setAlternatingRowColors(True)
-        self.tblBusqueda.setSelectionMode(QAbstractItemView.SingleSelection)
-        self.tblBusqueda.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tblBusqueda.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
+        self.tblBusqueda.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.tblBusqueda.setRowCount(12)
         self.tblBusqueda.horizontalHeader().setStretchLastSection(True)
 
@@ -172,8 +178,8 @@ class Ui_eBusqueda(object):
 "{		\n"
 "	background-color: rgb(62, 82, 125);\n"
 "}")
-        self.frPieBotonSalir.setFrameShape(QFrame.StyledPanel)
-        self.frPieBotonSalir.setFrameShadow(QFrame.Raised)
+        self.frPieBotonSalir.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frPieBotonSalir.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frPieBotonSalir)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.label_3 = QLabel(self.frPieBotonSalir)
@@ -183,17 +189,16 @@ class Ui_eBusqueda(object):
 
         self.horizontalLayout.addWidget(self.label_3)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
         self.btnSalir = QPushButton(self.frPieBotonSalir)
         self.btnSalir.setObjectName(u"btnSalir")
         font2 = QFont()
-        font2.setFamily(u"Poppins")
+        font2.setFamilies([u"Poppins"])
         font2.setPointSize(9)
         font2.setBold(False)
-        font2.setWeight(50)
         self.btnSalir.setFont(font2)
 
         self.horizontalLayout.addWidget(self.btnSalir)

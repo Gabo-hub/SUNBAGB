@@ -16,14 +16,13 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(51, 54, 57);</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0">
-    <widget class="QTabWidget" name="tabWidget">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QTabWidget" name="tblAnadirDatos">
      <property name="font">
       <font>
        <family>Poppins</family>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -31,10 +30,10 @@
       <string notr="true"/>
      </property>
      <property name="tabPosition">
-      <enum>QTabWidget::North</enum>
+      <enum>QTabWidget::TabPosition::North</enum>
      </property>
      <property name="tabShape">
-      <enum>QTabWidget::Rounded</enum>
+      <enum>QTabWidget::TabShape::Rounded</enum>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -64,224 +63,23 @@
       <attribute name="title">
        <string>Estudiantes</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="3" column="0">
-        <widget class="QFrame" name="frame_12">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(85, 90, 95);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_12">
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_18">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="bttn_Elimpiar">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
-{
-	border-style: solid;
-	background-color: #757a80;
-}
-
-QPushButton:pressed
-{		
-		color: rgb(255, 255, 255);
-	 	background-color:#333639;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/clear_icon.png</normaloff>:/Botones salida/clear_icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <spacer name="horizontalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>275</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="bttn_Eguardar">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
-{
-	border-style: solid;
-	background-color: #757a80;
-}
-
-QPushButton:pressed
-{		
-		color: rgb(255, 255, 255);
-	 	background-color:#333639;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/save-icon.png</normaloff>:/Botones salida/save-icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="5">
-           <spacer name="horizontalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>274</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="3">
-           <widget class="QLabel" name="label_2">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Salir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QLabel" name="label_17">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Limpiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="bttn_Salir">
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
-{
-	border-style: solid;
-	background-color: #757a80;
-}
-
-QPushButton:pressed
-{		
-		color: rgb(255, 255, 255);
-	 	background-color:#333639;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="Line" name="line_9">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
         <widget class="QFrame" name="frame_10">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>110</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(85, 90, 95);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
@@ -290,7 +88,6 @@ QPushButton:pressed
              <font>
               <family>Poppins</family>
               <pointsize>14</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -308,7 +105,6 @@ QPushButton:pressed
              <font>
               <family>Poppins</family>
               <pointsize>14</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -323,401 +119,622 @@ QPushButton:pressed
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item>
         <widget class="QFrame" name="frame_11">
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_9">
-          <item row="7" column="2" rowspan="7" colspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <layout class="QFormLayout" name="formLayout_3">
+            <property name="formAlignment">
+             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
+            </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="ql_EcedulaText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Cedula</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="qlinee_EcedulaInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99999999</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+              <property name="placeholderText">
+               <string>12345678</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="ql_EnombreText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Nombres</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="qlinee_EnombreInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>NOMBRE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="ql_EapellidoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Apellidos</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="qlinee_EapellidosInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>APELLIDO</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="ql_EsexoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Sexo</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="qlinee_EsexoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>A</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>M / F</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="ql_EedadText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Edad</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="qlinee_EedadInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99</string>
+              </property>
+              <property name="placeholderText">
+               <string>1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="ql_EfnacimientoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>F.Nacimiento</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="qlinee_EfnacimientoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99/99/9999</string>
+              </property>
+              <property name="placeholderText">
+               <string>DD/MM/AAAA</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="ql_ElnacimientoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>L.Nacimiento</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="qlinee_ElnacimientoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>Maracay, Montaña Fresca...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
            <widget class="Line" name="line_7">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
            </widget>
           </item>
-          <item row="8" column="1">
-           <widget class="QLineEdit" name="qlinee_EapellidosInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
+          <item>
+           <layout class="QFormLayout" name="formLayout_4">
+            <property name="formAlignment">
+             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-            <property name="placeholderText">
-             <string>APELLIDO</string>
-            </property>
-           </widget>
+            <item row="0" column="0">
+             <widget class="QLabel" name="ql_EestadoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Estado</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QComboBox" name="cbox_EestadoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="ql_EdireccionText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Direccion</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="qlinee_EdireccionInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>Maracay, Limon...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="ql_EobservacionesText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Observaciones</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="qlinee_EobservacionesInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>Observaciones</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="ql_ErepresentanteText">
+              <property name="font">
+               <font>
+                <family>Poppins SemiBold</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Representante</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QComboBox" name="comboBox">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="ql_EparentescoText">
+              <property name="font">
+               <font>
+                <family>Poppins SemiBold</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Pentesco</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QComboBox" name="cbox_EparentescoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="ql_EgradoseccionText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Grado-Sección</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QComboBox" name="cbox_Egradoseccion">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="7" column="0">
-           <widget class="QLabel" name="ql_EnombreText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Nombres</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1">
-           <widget class="QLineEdit" name="qlinee_EnombreInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>NOMBRE</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1" rowspan="3">
-           <widget class="QLineEdit" name="qlinee_EcedulaInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99999999</string>
-            </property>
-            <property name="maxLength">
-             <number>8</number>
-            </property>
-            <property name="placeholderText">
-             <string>12345678</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="0">
-           <widget class="QLabel" name="ql_EapellidoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Apellidos</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="1">
-           <widget class="QLineEdit" name="qlinee_EedadInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99</string>
-            </property>
-            <property name="placeholderText">
-             <string>1</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="6">
-           <widget class="Line" name="line_8">
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="line_9">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_12">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>109</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 90, 95);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer_5">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
-           </widget>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>275</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
-          <item row="9" column="1">
-           <widget class="QLineEdit" name="qlinee_EsexoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>A</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="placeholderText">
-             <string>M / F</string>
-            </property>
-           </widget>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="1">
+             <widget class="QPushButton" name="bttn_Elimpiar">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
+{
+	border-style: solid;
+	background-color: #757a80;
+}
+
+QPushButton:pressed
+{		
+		color: rgb(255, 255, 255);
+	 	background-color:#333639;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/clear_icon.png</normaloff>:/Botones salida/clear_icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_17">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Limpiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="bttn_Eguardar">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
+{
+	border-style: solid;
+	background-color: #757a80;
+}
+
+QPushButton:pressed
+{		
+		color: rgb(255, 255, 255);
+	 	background-color:#333639;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/save-icon.png</normaloff>:/Botones salida/save-icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_18">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="label_2">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Salir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="bttn_Esalir">
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
+{
+	border-style: solid;
+	background-color: #757a80;
+}
+
+QPushButton:pressed
+{		
+		color: rgb(255, 255, 255);
+	 	background-color:#333639;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="9" column="0">
-           <widget class="QLabel" name="ql_EsexoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>274</width>
+              <height>20</height>
+             </size>
             </property>
-            <property name="text">
-             <string>Sexo</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0" rowspan="4">
-           <widget class="QLabel" name="ql_EcedulaText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Cedula</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0">
-           <widget class="QLabel" name="ql_EedadText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Edad</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="0">
-           <widget class="QLabel" name="ql_EfnacimientoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>F.Nacimiento</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="1">
-           <widget class="QLineEdit" name="qlinee_EfnacimientoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99/99/9999</string>
-            </property>
-            <property name="placeholderText">
-             <string>DD/MM/AAAA</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="0">
-           <widget class="QLabel" name="ql_ElnacimientoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>L.Nacimiento</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="1">
-           <widget class="QLineEdit" name="qlinee_ElnacimientoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string/>
-            </property>
-            <property name="placeholderText">
-             <string>Maracay, Montaña Fresca...</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="4">
-           <widget class="QLabel" name="ql_EestadoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Estado</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="5">
-           <widget class="QComboBox" name="cbox_EestadoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="4">
-           <widget class="QLabel" name="ql_EdireccionText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Direccion</string>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="5">
-           <widget class="QLineEdit" name="qlinee_EdireccionInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>Maracay, Limon...</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="4">
-           <widget class="QLabel" name="ql_EobservacionesText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Observaciones</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="5">
-           <widget class="QLineEdit" name="qlinee_EobservacionesInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>Observaciones</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="4">
-           <widget class="QLabel" name="ql_ErepresentanteText">
-            <property name="font">
-             <font>
-              <family>Poppins SemiBold</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Representante</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="5">
-           <widget class="QComboBox" name="comboBox">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="4">
-           <widget class="QLabel" name="ql_EparentescoText">
-            <property name="font">
-             <font>
-              <family>Poppins SemiBold</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Pentesco</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="5">
-           <widget class="QComboBox" name="cbox_EparentescoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="4">
-           <widget class="QLabel" name="ql_EgradoseccionText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Grado-Sección</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="5">
-           <widget class="QComboBox" name="cbox_Egradoseccion">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-           </widget>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -729,35 +746,28 @@ QPushButton:pressed
        <string>Representantes</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="3" column="0">
+       <item row="4" column="0">
         <widget class="QFrame" name="frame_8">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>109</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(85, 90, 95);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_8">
-          <item row="0" column="5" rowspan="2" colspan="2">
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>274</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="0" rowspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
            <spacer name="horizontalSpacer_4">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -767,31 +777,15 @@ QPushButton:pressed
             </property>
            </spacer>
           </item>
-          <item row="2" column="4">
-           <widget class="QLabel" name="label_19">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Salir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="4">
-           <widget class="QPushButton" name="bttn_Rsalir">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
+          <item>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <widget class="QPushButton" name="bttn_Rguardar">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
 {
 	border-style: solid;
 	background-color: #757a80;
@@ -802,32 +796,49 @@ QPushButton:pressed
 		color: rgb(255, 255, 255);
 	 	background-color:#333639;
 }</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QPushButton" name="bttn_Rlimpiar">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/save-icon.png</normaloff>:/Botones salida/save-icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_16">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="bttn_Rlimpiar">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
 {
 	border-style: solid;
 	background-color: #757a80;
@@ -838,50 +849,49 @@ QPushButton:pressed
 		color: rgb(255, 255, 255);
 	 	background-color:#333639;
 }</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/clear_icon.png</normaloff>:/Botones salida/clear_icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="3">
-           <widget class="QLabel" name="label_15">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Limpiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="bttn_Rguardar">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/clear_icon.png</normaloff>:/Botones salida/clear_icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_15">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Limpiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="bttn_Rsalir">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
 {
 	border-style: solid;
 	background-color: #757a80;
@@ -892,63 +902,83 @@ QPushButton:pressed
 		color: rgb(255, 255, 255);
 	 	background-color:#333639;
 }</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="label_19">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Salir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/save-icon.png</normaloff>:/Botones salida/save-icon.png</iconset>
-            </property>
-            <property name="iconSize">
+            <property name="sizeHint" stdset="0">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>274</width>
+              <height>20</height>
              </size>
             </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2">
-           <widget class="QLabel" name="label_16">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
+           </spacer>
           </item>
          </layout>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="Line" name="line_5">
          <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+          <enum>Qt::Orientation::Horizontal</enum>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QFrame" name="frame_5">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>110</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(85, 90, 95);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
@@ -957,7 +987,6 @@ QPushButton:pressed
              <font>
               <family>Poppins</family>
               <pointsize>14</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -975,7 +1004,6 @@ QPushButton:pressed
              <font>
               <family>Poppins</family>
               <pointsize>14</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -993,295 +1021,314 @@ QPushButton:pressed
        <item row="1" column="0">
         <widget class="QFrame" name="frame_7">
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_7">
-          <item row="6" column="1">
-           <widget class="QLineEdit" name="qlinee_Rdireccioninfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <layout class="QFormLayout" name="formLayout">
+            <property name="labelAlignment">
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-            <property name="inputMask">
-             <string/>
+            <property name="formAlignment">
+             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-            <property name="placeholderText">
-             <string>Maracay, Montaña Fresca...</string>
+            <property name="leftMargin">
+             <number>0</number>
             </property>
-           </widget>
+            <item row="0" column="0">
+             <widget class="QLabel" name="ql_RnombreText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Nombres</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="qlinee_RnombreInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>NOMBRE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="ql_RapellidoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Apellidos</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="qlinee_RapellidosInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>APELLIDO</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="ql_RcedulaText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Cedula</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="qlinee_RcedulaInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99999999</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+              <property name="placeholderText">
+               <string>12345678</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="ql_RntelefonoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Telefono</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="qlinee_RntelefonoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>(9999)-9999999</string>
+              </property>
+              <property name="text">
+               <string>()-</string>
+              </property>
+              <property name="placeholderText">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="ql_RdireccionText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Direccion</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="qlinee_Rdireccioninfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string/>
+              </property>
+              <property name="placeholderText">
+               <string>Maracay, Montaña Fresca...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="ql_RcedulaText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Cedula</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3">
-           <widget class="QLabel" name="ql_RobservacionesText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Observaciones</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QLineEdit" name="qlinee_RapellidosInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>APELLIDO</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="5">
-           <widget class="Line" name="line_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLineEdit" name="qlinee_RcedulaInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99999999</string>
-            </property>
-            <property name="maxLength">
-             <number>8</number>
-            </property>
-            <property name="placeholderText">
-             <string>12345678</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QLineEdit" name="qlinee_RntelefonoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>(9999)-9999999</string>
-            </property>
-            <property name="text">
-             <string>()-</string>
-            </property>
-            <property name="placeholderText">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="4">
-           <widget class="QLineEdit" name="qlinee_RobservacionesInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>Observaciones</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="ql_RdireccionText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Direccion</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="4">
-           <widget class="QLineEdit" name="qlinee_RdirecciontrabInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>Maracay, Limon...</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2" rowspan="7">
+          <item>
            <widget class="Line" name="line_4">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
            </widget>
           </item>
-          <item row="1" column="3">
-           <widget class="QLabel" name="ql_RdirecciontrabText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
+          <item>
+           <layout class="QFormLayout" name="formLayout_2">
+            <property name="rowWrapPolicy">
+             <enum>QFormLayout::RowWrapPolicy::DontWrapRows</enum>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
+            <property name="labelAlignment">
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-            <property name="text">
-             <string>Direccion de Trabajo</string>
+            <property name="formAlignment">
+             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="ql_RntelefonoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Telefono</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="ql_RapellidoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Apellidos</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="qlinee_RnombreInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>NOMBRE</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="ql_RnombreText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Nombres</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="3">
-           <widget class="QLabel" name="ql_RestadolabText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Estado Laboral</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="4">
-           <widget class="QLineEdit" name="qlinee_estadolabInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>Activo/Retirado</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="3">
-           <widget class="QLabel" name="ql_RtotalrepreText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Total de Representados</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="4">
-           <widget class="QLineEdit" name="qlinee_RtotalrepreInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99</string>
-            </property>
-            <property name="placeholderText">
-             <string>1</string>
-            </property>
-           </widget>
+            <item row="0" column="0">
+             <widget class="QLabel" name="ql_RdirecciontrabText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Direccion de Trabajo</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="qlinee_RdirecciontrabInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>Maracay, Limon...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="ql_RobservacionesText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Observaciones</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="qlinee_RobservacionesInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>Observaciones</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="ql_RestadolabText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Estado Laboral</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="qlinee_estadolabInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>Activo/Retirado</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="ql_RtotalrepreText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Total de Representados</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="qlinee_RtotalrepreInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color:rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99</string>
+              </property>
+              <property name="placeholderText">
+               <string>1</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -1293,16 +1340,246 @@ QPushButton:pressed
        <string>Profesores</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0">
-        <widget class="QFrame" name="frame">
+       <item row="5" column="0">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QFrame" name="frame_6">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>109</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">background-color: rgb(85, 90, 95);</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+          <enum>QFrame::Shape::StyledPanel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_14">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Limpiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="bttn_Pguardar">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
+{
+	border-style: solid;
+	background-color: #757a80;
+}
+
+QPushButton:pressed
+{		
+		color: rgb(255, 255, 255);
+	 	background-color:#333639;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/save-icon.png</normaloff>:/Botones salida/save-icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="bttn_Plimpiar">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
+{
+	border-style: solid;
+	background-color: #757a80;
+}
+
+QPushButton:pressed
+{		
+		color: rgb(255, 255, 255);
+	 	background-color:#333639;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/clear_icon.png</normaloff>:/Botones salida/clear_icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="bttn_Psalir">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton:hover
+{
+	border-style: solid;
+	background-color: #757a80;
+}
+
+QPushButton:pressed
+{		
+		color: rgb(255, 255, 255);
+	 	background-color:#333639;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../assets/icons/resource.qrc">
+                <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>50</width>
+                <height>50</height>
+               </size>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="label_20">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Salir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QFrame" name="frame">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>110</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 90, 95);</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
@@ -1311,7 +1588,6 @@ QPushButton:pressed
              <font>
               <family>Poppins</family>
               <pointsize>14</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -1329,7 +1605,6 @@ QPushButton:pressed
              <font>
               <family>Poppins</family>
               <pointsize>14</pointsize>
-              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -1344,580 +1619,389 @@ QPushButton:pressed
          </layout>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="0">
         <widget class="QFrame" name="frame_4">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::LeftToRight</enum>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+          <enum>QFrame::Shadow::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="5" column="0">
-           <widget class="QLabel" name="ql_PsexoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <layout class="QFormLayout" name="formLayout_5">
+            <property name="formAlignment">
+             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Sexo</string>
-            </property>
-           </widget>
+            <item row="0" column="0">
+             <widget class="QLabel" name="ql_PnombreText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Nombres</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="qlinee_PnombreInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>NOMBRE</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="ql_PapellidoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Apellidos</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="qlinee_PapellidosInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>APELLIDO</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="ql_PcedulaText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Cedula</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="qlinee_PcedulaInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99999999</string>
+              </property>
+              <property name="maxLength">
+               <number>8</number>
+              </property>
+              <property name="placeholderText">
+               <string>12345678</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="ql_PsexoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Sexo</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="qlinee_PsexoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>A</string>
+              </property>
+              <property name="placeholderText">
+               <string>M / F</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="ql_PfnacimientoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>F.Nacimiento</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="qlinee_PfnacimientoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99/99/9999</string>
+              </property>
+              <property name="placeholderText">
+               <string>DD/MM/AAAA</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="0" column="1">
-           <widget class="QLineEdit" name="qlinee_PnombreInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>NOMBRE</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QLineEdit" name="qlinee_PsexoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>A</string>
-            </property>
-            <property name="placeholderText">
-             <string>M / F</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QLabel" name="ql_PanosserviText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Años de servicios</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="4">
-           <widget class="QLineEdit" name="qlinee_PanosserviInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99</string>
-            </property>
-            <property name="placeholderText">
-             <string>10</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="ql_PnombreText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Nombres</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="ql_PfnacimientoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>F.Nacimiento</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2" rowspan="7">
+          <item>
            <widget class="Line" name="line">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QLineEdit" name="qlinee_PcedulaInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
+          <item>
+           <layout class="QFormLayout" name="formLayout_6">
+            <property name="formAlignment">
+             <set>Qt::AlignmentFlag::AlignJustify|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
-            <property name="inputMask">
-             <string>99999999</string>
-            </property>
-            <property name="maxLength">
-             <number>8</number>
-            </property>
-            <property name="placeholderText">
-             <string>12345678</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
-           <widget class="QLineEdit" name="qlinee_PfnacimientoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>99/99/9999</string>
-            </property>
-            <property name="placeholderText">
-             <string>DD/MM/AAAA</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="ql_PcedulaText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Cedula</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLineEdit" name="qlinee_PapellidosInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>APELLIDO</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="ql_PapellidoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Apellidos</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="3">
-           <widget class="QLabel" name="ql_PcodcargoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Codigo de cargo</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="4">
-           <widget class="QLineEdit" name="qlinee_PcodcargoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>1125DB</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="3">
-           <widget class="QLabel" name="ql_PntelefonoText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Telefono</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="4">
-           <widget class="QLineEdit" name="qlinee_PntelefonoInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="inputMask">
-             <string>(9999)-9999999</string>
-            </property>
-            <property name="text">
-             <string>()-</string>
-            </property>
-            <property name="placeholderText">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3">
-           <widget class="QLabel" name="ql_PcoddepenText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Codigo de dependencia</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="4">
-           <widget class="QLineEdit" name="qlinee_PcoddepenInfo">
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(255, 255, 255);</string>
-            </property>
-            <property name="placeholderText">
-             <string>121300</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="3">
-           <widget class="QLabel" name="ql_PgradodocText">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>Grado del docente</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="4">
-           <widget class="QComboBox" name="qcbox_PgradodocInfo">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="editable">
-             <bool>false</bool>
-            </property>
-            <property name="duplicatesEnabled">
-             <bool>false</bool>
-            </property>
-            <item>
-             <property name="text">
-              <string>Preescolar</string>
-             </property>
+            <item row="0" column="0">
+             <widget class="QLabel" name="ql_PanosserviText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Años de servicios</string>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>1er Grado</string>
-             </property>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="qlinee_PanosserviInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>99</string>
+              </property>
+              <property name="placeholderText">
+               <string>10</string>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>2er Grado</string>
-             </property>
+            <item row="1" column="0">
+             <widget class="QLabel" name="ql_PcodcargoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Codigo de cargo</string>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>3er Grado</string>
-             </property>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="qlinee_PcodcargoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>1125DB</string>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>4to Grado</string>
-             </property>
+            <item row="2" column="0">
+             <widget class="QLabel" name="ql_PcoddepenText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Codigo de dependencia</string>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>5to Grado</string>
-             </property>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="qlinee_PcoddepenInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="placeholderText">
+               <string>121300</string>
+              </property>
+             </widget>
             </item>
-            <item>
-             <property name="text">
-              <string>6to Grado</string>
-             </property>
+            <item row="3" column="0">
+             <widget class="QLabel" name="ql_PntelefonoText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Telefono</string>
+              </property>
+             </widget>
             </item>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QFrame" name="frame_6">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(85, 90, 95);</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0" rowspan="2">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="4">
-           <widget class="QPushButton" name="bttn_Psalir">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
-{
-	border-style: solid;
-	background-color: #757a80;
-}
-
-QPushButton:pressed
-{		
-		color: rgb(255, 255, 255);
-	 	background-color:#333639;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/salir_icon.png</normaloff>:/Botones salida/salir_icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="5">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="bttn_Pguardar">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
-{
-	border-style: solid;
-	background-color: #757a80;
-}
-
-QPushButton:pressed
-{		
-		color: rgb(255, 255, 255);
-	 	background-color:#333639;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/save-icon.png</normaloff>:/Botones salida/save-icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_13">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Guardar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QPushButton" name="bttn_Plimpiar">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton:hover
-{
-	border-style: solid;
-	background-color: #757a80;
-}
-
-QPushButton:pressed
-{		
-		color: rgb(255, 255, 255);
-	 	background-color:#333639;
-}</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="icon">
-             <iconset resource="../assets/icons/resource.qrc">
-              <normaloff>:/Botones salida/clear_icon.png</normaloff>:/Botones salida/clear_icon.png</iconset>
-            </property>
-            <property name="iconSize">
-             <size>
-              <width>50</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QLabel" name="label_14">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Limpiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="4">
-           <widget class="QLabel" name="label_20">
-            <property name="font">
-             <font>
-              <family>Poppins</family>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Salir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-           </widget>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="qlinee_PntelefonoInfo">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="inputMask">
+               <string>(9999)-9999999</string>
+              </property>
+              <property name="text">
+               <string>()-</string>
+              </property>
+              <property name="placeholderText">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="ql_PgradodocText">
+              <property name="font">
+               <font>
+                <family>Poppins</family>
+                <pointsize>12</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>Grado del docente</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QComboBox" name="qcbox_PgradodocInfo">
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="editable">
+               <bool>false</bool>
+              </property>
+              <property name="duplicatesEnabled">
+               <bool>false</bool>
+              </property>
+              <item>
+               <property name="text">
+                <string>Preescolar</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1er Grado</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2er Grado</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>3er Grado</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>4to Grado</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5to Grado</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>6to Grado</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -1928,31 +2012,6 @@ QPushButton:pressed
    </item>
   </layout>
  </widget>
- <tabstops>
-  <tabstop>qlinee_EcedulaInfo</tabstop>
-  <tabstop>qlinee_EnombreInfo</tabstop>
-  <tabstop>qlinee_EapellidosInfo</tabstop>
-  <tabstop>qlinee_EsexoInfo</tabstop>
-  <tabstop>qlinee_EedadInfo</tabstop>
-  <tabstop>bttn_Eguardar</tabstop>
-  <tabstop>bttn_Elimpiar</tabstop>
-  <tabstop>bttn_Salir</tabstop>
-  <tabstop>qlinee_RnombreInfo</tabstop>
-  <tabstop>qlinee_RapellidosInfo</tabstop>
-  <tabstop>qlinee_RcedulaInfo</tabstop>
-  <tabstop>qlinee_RntelefonoInfo</tabstop>
-  <tabstop>qlinee_Rdireccioninfo</tabstop>
-  <tabstop>qlinee_RdirecciontrabInfo</tabstop>
-  <tabstop>qlinee_RobservacionesInfo</tabstop>
-  <tabstop>qlinee_estadolabInfo</tabstop>
-  <tabstop>qlinee_RtotalrepreInfo</tabstop>
-  <tabstop>qlinee_PnombreInfo</tabstop>
-  <tabstop>qlinee_PapellidosInfo</tabstop>
-  <tabstop>qlinee_PcedulaInfo</tabstop>
-  <tabstop>qlinee_PsexoInfo</tabstop>
-  <tabstop>qlinee_PfnacimientoInfo</tabstop>
-  <tabstop>bttn_Psalir</tabstop>
- </tabstops>
  <resources>
   <include location="../assets/icons/resource.qrc"/>
  </resources>
@@ -2086,7 +2145,7 @@ QPushButton:pressed
    </hints>
   </connection>
   <connection>
-   <sender>bttn_Salir</sender>
+   <sender>bttn_Esalir</sender>
    <signal>clicked()</signal>
    <receiver>AnadirDatos</receiver>
    <slot>close()</slot>

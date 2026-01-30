@@ -1,6 +1,6 @@
-from PySide2.QtWidgets import QMessageBox
-from PySide2.QtGui import *
-from PySide2.QtCore import *
+from PySide6.QtWidgets import QMessageBox
+from PySide6.QtGui import *
+from PySide6.QtCore import *
 
 msg = QMessageBox()
 
@@ -13,14 +13,11 @@ def MensajeCaja(self,titulo,texto,tipo):
     self.msg.setText(texto)
     self.msg.setStyleSheet(u"background-color: rgb(85, 90, 95); color: rgb(255, 255, 255);")
     
-
-
-
     if self.tipo == 1:
         self.msg.setStandardButtons(QMessageBox.Ok)
-        self.msg.setIcon(self.msg.Information) 
+        self.msg.setIcon(QMessageBox.Information) 
     elif self.tipo == 2:
-        self.msg.setIcon(self.msg.Question)  
+        self.msg.setIcon(QMessageBox.Question)  
         self.msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
 
     self.msg.setWindowIcon(icon)

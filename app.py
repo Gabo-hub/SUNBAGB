@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication
 from controllers.main_windows import PantallaPrint
         
 xancho=0
@@ -18,4 +18,4 @@ if __name__ == "__main__":
     # windows.representantespantalla(xancho, yalto)
     windows.show()
     
-    app.exec_()
+    app.exec()
